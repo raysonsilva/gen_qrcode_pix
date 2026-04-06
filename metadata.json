@@ -1,0 +1,5 @@
+{
+  "name": "Gerador de PIX Estático",
+  "description": "Aplicativo para gerar QR Codes de PIX para recebimento estático seguindo os padrões do Banco Central.",
+  "requestFramePermissions": []
+}

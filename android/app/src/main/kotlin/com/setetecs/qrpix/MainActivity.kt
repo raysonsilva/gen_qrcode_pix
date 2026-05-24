@@ -1,4 +1,4 @@
-package com.tech7.qrpix
+package com.setetecs.qrpix
 
 import io.flutter.embedding.android.FlutterActivity
 

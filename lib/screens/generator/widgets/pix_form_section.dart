@@ -82,6 +82,15 @@ class _PixFormSectionState extends State<PixFormSection> {
     );
   }
 
+  String? get _txidError {
+    final txid = _txidCtrl.text;
+    if (txid.isEmpty) return null;
+    if (!RegExp(r'^[a-zA-Z0-9]{1,25}$').hasMatch(txid)) {
+      return 'Use apenas letras e números, sem espaços (máx. 25 caracteres)';
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
@@ -175,6 +184,7 @@ class _PixFormSectionState extends State<PixFormSection> {
             controller: _txidCtrl,
             icon: Icons.tag_rounded,
             maxLength: 25,
+            errorText: _txidError,
           ),
         ],
       ),
@@ -215,6 +225,7 @@ class _Field extends StatelessWidget {
   final IconData icon;
   final TextInputType? keyboardType;
   final int? maxLength;
+  final String? errorText;
 
   const _Field({
     required this.label,
@@ -223,6 +234,7 @@ class _Field extends StatelessWidget {
     required this.icon,
     this.keyboardType,
     this.maxLength,
+    this.errorText,
   });
 
   @override
@@ -238,6 +250,7 @@ class _Field extends StatelessWidget {
         hintText: hint,
         prefixIcon: Icon(icon, size: 20),
         counterText: '',
+        errorText: errorText,
       ),
     );
   }

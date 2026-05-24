@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2026-05-24
+
+### Added
+- TXID validation: the transaction ID field now only accepts letters and numbers (a-z, A-Z, 0-9), with a maximum of 25 characters, following Banco Central BR Code rules.
+- Real-time error message displayed on the "ID da transação" field when the value contains invalid characters (e.g. spaces or special characters).
+- QR Code generation is blocked when the TXID is invalid.
+
+### Changed
+- App version bumped to `0.2.2+4`.
+
 ## [0.2.1] - 2026-04-07
 
 ### Added

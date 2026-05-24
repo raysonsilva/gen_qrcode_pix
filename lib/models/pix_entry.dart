@@ -125,8 +125,15 @@ class PixFormData {
     this.txid = '',
   });
 
+  /// TXID válido: vazio ou apenas letras/números, entre 1 e 25 caracteres.
+  bool get isTxidValid =>
+      txid.isEmpty || RegExp(r'^[a-zA-Z0-9]{1,25}$').hasMatch(txid);
+
   bool get isValid =>
-      key.isNotEmpty && receiverName.isNotEmpty && receiverCity.isNotEmpty;
+      key.isNotEmpty &&
+      receiverName.isNotEmpty &&
+      receiverCity.isNotEmpty &&
+      isTxidValid;
 
   bool get isEmpty =>
       key.isEmpty &&

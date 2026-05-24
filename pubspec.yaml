@@ -1,6 +1,6 @@
 name: qrpix
 description: Gerador de QR Code PIX estático em Flutter.
-version: 0.2.1+3
+version: 0.2.2+4
 
 environment:
   sdk: '>=3.11.0 <4.0.0'
